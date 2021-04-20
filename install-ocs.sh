@@ -6,7 +6,7 @@ install_ocs() {
   oc get -n openshift-config secret/pull-secret -ojson | jq -r '.data.".dockerconfigjson"' | base64 -d | jq >secret.json
   jq -c '.auths."quay.io".auth = "'$PULL_SECRET'"' secret.json >temp-auth.json
   jq '.auths."quay.io".email |=""' temp-auth.json >temp-secret.json
-  # oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=temp-secret.json
+  oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=temp-secret.json
 
   rm temp-secret.json temp-auth.json secret.json
 
