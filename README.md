@@ -5,12 +5,10 @@
     wget https://raw.githubusercontent.com/afreen23/dev-setup/main/install-ocs.sh
     chmod +x install-ocs.sh
   ```
-
 2. Login to your OCP cluster
-
 3. Run the file as `./install-ocs.sh`
-
-4. Go to the console > Operator hub > Storage > Choose the non-GA version to install OCS
+4. Pass the token secret when asked and wait for script to finish.
+5. Go to the console > Operator hub > Storage > Choose the non-GA version to install OCS
 
 ## Installing m4.2xlarge cluster for OCS
 
