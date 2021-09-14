@@ -3,12 +3,13 @@
 install_ocs() {
   echo "Updating the pull secret..."
 
-  oc get -n openshift-config secret/pull-secret -ojson | jq -r '.data.".dockerconfigjson"' | base64 -d | jq >secret.json
-  jq -c '.auths."quay.io".auth = "'$PULL_SECRET'"' secret.json >temp-auth.json
-  jq '.auths."quay.io".email |=""' temp-auth.json >temp-secret.json
+  oc get -n openshift-config secret/pull-secret -ojson | jq -r '.data.".dockerconfigjson"' | base64 -d | jq > secret.json
+  jq --arg secret $PULL_SECRET 'del(.auths."quay.io") | .auths += {"quay.io/rhceph-dev": {auth: $secret, email: ""}}' secret.json > temp-secret.json
   oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=temp-secret.json
 
-  rm temp-secret.json temp-auth.json secret.json
+  sleep 1m
+
+  rm temp-secret.json  secret.json
 
   echo "Creating catalog source ..."
 
@@ -29,7 +30,7 @@ install_ocs() {
       publisher: Red Hat
       sourceType: grpc
 EOF
-}
+  }
 
 echo "Enter the pull secret"
 
