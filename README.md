@@ -10,6 +10,8 @@
 4. Pass the token secret when asked and wait for script to finish.
 5. Go to the console > Operator hub > Storage > Choose the non-GA version to install OCS
 
+Note: _It can take upto 7-10 minutes to get the pull secret updated_
+
 ## Installing m4.2xlarge cluster for OCS
 
 1. Install the `openshift-installer`
