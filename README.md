@@ -1,7 +1,7 @@
 ## Installing unreleased OCS build
 
-### Pre-requisite
-Install [jq](https://stedolan.github.io/jq/)
+### Requirements
+ - [jq](https://stedolan.github.io/jq/) should be present
 
 ### Installation
 
