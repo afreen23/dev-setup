@@ -1,5 +1,8 @@
 ## Installing unreleased OCS build
 
+### Pre-requisite
+Install [jq](https://stedolan.github.io/jq/)
+
 1. Download the file [install-ocs.sh](https://github.com/afreen23/dev-setup/blob/main/install-ocs.sh)
   ```bash
     wget https://raw.githubusercontent.com/afreen23/dev-setup/main/install-ocs.sh
