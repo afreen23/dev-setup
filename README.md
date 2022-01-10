@@ -25,7 +25,6 @@
   ```
 2. Login to your OCP cluster
 3. Run the file as `./install-ocs.sh`
-4. Pass the token secret when asked and wait for script to finish.
-5. Go to the console > Operator hub > Storage > Choose the non-GA version to install ODF
+4. Go to the console > Operator hub > Storage > Choose the non-GA version to install ODF
 
 Note: _It can take upto 7-10 minutes to get the pull secret updated and hence the ODF catalog to appear in hub_
