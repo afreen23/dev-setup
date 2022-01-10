@@ -29,25 +29,3 @@
 5. Go to the console > Operator hub > Storage > Choose the non-GA version to install ODF
 
 Note: _It can take upto 7-10 minutes to get the pull secret updated and hence the ODF catalog to appear in hub_
-
-## Installing m4.2xlarge cluster for ODF
-
-1. Install the `openshift-installer`
-2. Create install config
-```bash
- ./openshift-installer create install-config --dir my-dir
-```
-3. Provide all inputs
-4. Edit the `platform` field for worker nodes in install config as
-```yaml
-platform:
-  aws: 
-    type: m4.2xlarge
-```
-Save the changes.
-5. Create cluster
-```bash
-./openshift-installer create cluster --dir my-dir
-```
-
-_Note: These machines incur more cost hence use wisely. Destroy the cluster when not in use by `openshift-installer destroy cluster --dir mydir`_
