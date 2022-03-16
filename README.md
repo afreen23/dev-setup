@@ -12,6 +12,8 @@
 
     #Add pull secret ODF_PULL_SECRET
     export ODF_PULL_SECRET=<odf-pull-secret>
+
+    # source ~/.bashrc
     ```
   _Note: Make sure to use `ODF_PULL_SECRET` as the name of the variable in order to get the script working_
 
